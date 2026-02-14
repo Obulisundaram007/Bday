@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+h1 {
+    color: #ff4d6d;
+}
+
+h2 {
+    color: #ff4d6d;
+    font-weight: normal;
+}
+
+.cake {
+    font-size: 80px;
+    margin: 15px 0;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+p {
+    color: #444;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e63e5c;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+    <div class="card">
+        <h1>Happy Birthday Cutie Pie🎉</h1>
+        <h2>Kyla Mae Abendanio❤️</h2>
+
+        <div class="cake">🎂</div>
+
+        <div class="gallery">
+            <img src="./img1.jpeg" alt="Memory 1">
+            <img src="./img2.jpeg" alt="Memory 2">
+            <img src="./img3.jpeg" alt="Memory 3">
+            <img src="./img4.jpeg" alt="Memory 4">
+            <img src="./img5.jpeg" alt="Memory 5">
+            <img src="./img6.jpeg" alt="Memory 6">
+            <img src="./img7.jpeg" alt="Memory 7">
+            <img src="./img8.jpeg" alt="Memory 8">
+        </div>
+
+        <p>
+            Today is special because **you** were born.  
+            And my life changed the day you came into it.
+        </p>
+
+        <button onclick="nextPage()">Click for Surprise 💝</button>
+        <button onclick="toggleMusic()">Play Birthday Song 🎵</button>
+    </div>
+</div>
+
+<!-- PAGE 2 (REAL SURPRISE) -->
+<div class="page" id="page2">
+    <div class="card">
+        <h1>Just One Truth 💖</h1>
+
+        <p>
+            I don’t promise perfection.  
+            But I promise effort, honesty, and choosing you—  
+            even on hard days.
+        </p>
+
+        <p>
+            Thank you for being you.  
+            Thank you for existing.  
+            Thank you for letting me love you.
+        </p>
+
+        <p style="font-weight:bold; color:#ff4d6d;">
+            Happy Birthday, my favorite person🎂❤️
+        </p>
+    </div>
+</div>
+
+<audio id="song">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+</audio>
+
+<script>
+function nextPage() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.add("active");
+}
+
+function toggleMusic() {
+    const song = document.getElementById("song");
+    song.paused ? song.play() : song.pause();
+}
+</script>
+
+</body>
+</html>
